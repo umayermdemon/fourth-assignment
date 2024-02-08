@@ -10,7 +10,8 @@ function calculateMoney(ticketSale) {
   return totalRemaining;
  }
 
- function checkName(name) {
+
+function checkName(name) {
 
   if(typeof name !== "string"){
     return "Invalid";
@@ -26,7 +27,7 @@ function calculateMoney(ticketSale) {
   }
 
 
-  function deleteInvalids(array) {
+function deleteInvalids(array) {
     if(!Array.isArray(array)){
       return "Invalid Array"
     }
@@ -39,4 +40,22 @@ function calculateMoney(ticketSale) {
    return newArray;
   }
 
-  
+
+function password(obj) {
+    if(!obj.name||!obj.birthYear|| !obj.siteName){
+      return "Invalid";
+    }
+    else if(obj.birthYear.toString().length !== 4){
+      return "Invalid";
+    }
+    
+     const name= obj.name;
+     const birthYear= obj.birthYear;
+     const siteName= obj.siteName;
+     let upperSiteName= siteName.charAt(0).toUpperCase()+ siteName.slice(1);
+     const output= upperSiteName+"#"+name+"@"+birthYear;
+     return output;
+    }
+    
+
+
